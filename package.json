@@ -1,0 +1,32 @@
+{
+  "name": "fem-js-newbie-06-faq-accordion",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend Mentor - Faq Accordion",
+  "author": "VIMP",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "servor src index.html 1234 --reload",
+    "deploy": "gh-pages -d src"
+  },
+  "keywords": [
+    "frontend-mentor-challenges",
+    "html",
+    "css",
+    "javascript",
+    "newbie",
+    "faq-accordion-main"
+  ],
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.9.0",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "servor": "^4.0.2"
+  }
+}
