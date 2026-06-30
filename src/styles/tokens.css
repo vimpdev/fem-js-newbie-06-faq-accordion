@@ -1,0 +1,42 @@
+@layer tokens {
+
+  :root {
+    --clr-white: #FFFFFF;
+    --clr-black: #000000;
+    --clr-purple-950: #301534;
+    --clr-purple-600: #8B6990;
+    --clr-purple-100: #F8EEFF;
+    --clr-violet-600: #AD28EB;
+
+    --space-0: 0;
+    --space-100: 0.5rem;
+    --space-200: 1rem;
+    --space-300: 1.5rem;
+    --space-400: 2rem;
+    --space-500: 2.5rem;
+
+    --clr-txt-primary: var(--clr-purple-950);
+    --clr-txt-secondary: var(--clr-purple-600);
+
+    --clr-bg-page: var(--clr-purple-100);
+    --clr-bg-surface: var(--clr-white);
+
+    --clr-border: var(--clr-purple-100);
+
+    --clr-accent: var(--clr-violet-600);
+
+    --ff-base: 'Work Sans', system-ui, sans-serif;
+
+    --fs-body: 1rem;
+    --fs-title: clamp(2rem, .55rem + 6.15vw, 3.5rem);
+    --fs-question: clamp(1rem, .88rem + .5vw, 1.125rem);
+    --fs-answer: clamp(0.875rem, .73rem + .56vw, 1rem);
+    --fs-caption: 0.85rem;
+
+    --fw-regular: 400;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    --transition-default: .25s ease-out;
+  }
+}
