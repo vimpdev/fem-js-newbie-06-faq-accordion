@@ -1,0 +1,177 @@
+@layer reset, fonts, tokens, base, layout, components, utilities, responsive, states;
+
+@import url('./reset.css') layer(reset);
+@import url('./fonts.css') layer(fonts);
+@import url('./tokens.css') layer(tokens);
+
+@layer base {
+
+  body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    place-items: center;
+    font-family: var(--ff-base);
+    font-size: var(--fs-body);
+    color: var(--clr-txt-primary);
+    background-color: var(--clr-bg-page);
+    background-image: url('./../assets/images/patterns/mobile.svg');
+    background-repeat: repeat-x;
+    background-position: left top;
+  }
+
+  :focus-visible {
+    border-radius: .15em;
+    outline-color: currentColor;
+  }
+}
+
+@layer layout {
+
+  main {
+    margin-top: 4.3rem;
+  }
+}
+
+@layer components {
+
+  .faq {
+    inline-size: clamp(20.4375rem, 87vw, 37.5rem);
+    padding: var(--space-300) var(--space-300) var(--space-0);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr-bg-surface);
+    border-radius: .5rem;
+    box-shadow: 0 2rem 3.5rem color-mix(in srgb, #500076 10%, transparent);
+  }
+
+  .faq__header {
+    --cluster-gap: var(--space-300);
+
+    img {
+      inline-size: 1.5rem;
+      block-size: 1.5rem;
+    }
+
+    h1 {
+      font-size: var(--fs-title);
+      line-height: 1.18;
+    }
+  }
+
+
+  .faq__item {
+    padding-block: var(--space-300);
+    border-bottom: 1px solid var(--clr-border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    summary {
+      justify-content: space-between;
+      font-size: var(--fs-question);
+      font-weight: var(--fw-semibold);
+      cursor: pointer;
+      line-height: 1.19;
+      list-style: none;
+      transition: color var(--transition-default);
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::after {
+        content: '';
+        inline-size: 1.875rem;
+        block-size: 1.875rem;
+        background: url('./../assets/images/icons/icon-plus.svg') no-repeat center / contain;
+        flex-shrink: 0;
+      }
+    }
+
+    p {
+      font-size: var(--fs-answer);
+      color: var(--clr-txt-secondary);
+      line-height: 1.5;
+    }
+
+    /* Replace the expand icon when the accordion is open */
+    &[open] {
+      p {
+        padding-block-start: var(--space-300);
+      }
+
+      summary::after {
+        background-image: url('./../assets/images/icons/icon-minus.svg');
+      }
+    }
+  }
+
+
+  .attribution {
+    padding-block: var(--space-300);
+    font-size: var(--fs-caption);
+    font-weight: var(--fw-semibold);
+    text-align: center;
+
+    a {
+      margin-inline: .5em;
+      transition: color var(--transition-default);
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset-inline-end: 0;
+        inset-block-end: -0.125rem;
+        inline-size: 100%;
+        block-size: 0.125rem;
+        background-color: currentColor;
+        transform: scaleX(1);
+        transform-origin: center;
+        transition: transform var(--transition-default);
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+@layer utilities {
+
+  .cluster {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--cluster-gap, 1rem);
+  }
+}
+
+@layer responsive {
+
+  @media (width >=48rem) {
+    body {
+      background-image: url('./../assets/images/patterns/desktop.svg');
+    }
+
+    .faq {
+      padding: var(--space-500) var(--space-500) var(--space-200);
+      gap: var(--space-100);
+      border-radius: 1rem;
+    }
+  }
+}
+
+@layer states {
+
+  .faq__item summary:is(:hover, :focus-visible) {
+    color: var(--clr-accent);
+  }
+
+  .attribution a:is(:hover, :focus-visible) {
+    color: var(--clr-accent);
+  }
+
+  .attribution a:is(:hover, :focus-visible)::after {
+    transform: scaleX(0);
+  }
+}
