@@ -12,7 +12,7 @@ A responsive FAQ accordion built with semantic HTML and modern CSS. It uses the 
 ## 🔗 Links
 
 - 🌎 [Live site](https://vimpdev.github.io/fem-js-newbie-06-faq-accordion/)
-<!-- - 📌 [Frontend Mentor solution]() -->
+- 📌 [Frontend Mentor solution](https://www.frontendmentor.io/solutions/faq-accordion-semantic-html-and-modern-css-3R-R23x1a8)
 
 ## 🎬 Demo
 
